@@ -20,7 +20,7 @@ async function createPdf(text) {
   const pdfBytes = await pdfDoc.save();
 
   // Menyimpan file PDF ke disk
-  fs.writeFileSync('signature/document2.pdf', pdfBytes);
+  fs.writeFileSync('document.pdf', pdfBytes);
 }
 
 const textToSave = `

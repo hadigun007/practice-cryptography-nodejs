@@ -2,14 +2,16 @@ const crypto = require('crypto');
 const fs = require('fs');
 
 
-const public = 'public_key.pem'
-const document = 'document.pdf'
-const sign = ''
+const publicKeyPath = 'key/public_key.pem'
+const documentPath = 'Panduan Set up Ledger Nano X.pdf'
+const signaturePath = 'sign/sign_panduan_set_up_ledger_nano_x.pdf.dat'
+
 
 // Baca kunci publik dari file
-const publicKeyPem = fs.readFileSync(public, 'utf8');
-const documentToVerify = fs.readFileSync(document);
-const signatureToVerify = `-AvMuF7fjea63RM1Y/PEG8z+eBYTMdkndhEW0oT3XmvMq/nvm3Ii6Msa7nyyLblTpk2OHF67zuG4CJjCx/qCWykV7xKU4VHzqAg1sripJRYseefDUbGPGa1dewDVbZjVwWo+8tXVOn+HaOmyYCaK/CUyQ0pjGTggxZm35E++/zhwexEKwL4xeZrzz6RZp9Kh1jBXLa6DyV3Q4xqLwU/Gumic5q4wFNfKmOK4KG+KBk6i6aTl9xv3KaxZl4szWYB1OEjxjuJj9cdT5tYXn9ACcsOUeHjCqkwFqk1LQfRNOE0rtxfS8Yxu+uMcs22+eEuB8jm/qT9gPjlExL2z6puIESQ==`; // Gantilah dengan tanda tangan yang ada pada dokumen
+const publicKeyPem = fs.readFileSync(publicKeyPath, 'utf8');
+const documentToVerify = fs.readFileSync(documentPath);
+const signatureToVerify = fs.readFileSync(signaturePath, 'utf-8');
+console.log(signatureToVerify)
 
 // Buat objek kunci publik dari pem
 const publicKey = crypto.createPublicKey(publicKeyPem);
@@ -28,3 +30,4 @@ if (isVerified) {
 } else {
   console.log('Tanda Tangan Digital Tidak Valid.');
 }
+
