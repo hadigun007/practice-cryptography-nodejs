@@ -20,10 +20,10 @@ async function createPdf(text) {
   const pdfBytes = await pdfDoc.save();
 
   // Menyimpan file PDF ke disk
-  fs.writeFileSync('document.pdf', pdfBytes);
+  fs.writeFileSync('document/document.pdf', pdfBytes);
 }
 
 const textToSave = `
-Ini adalah contoh teks yang akan disimpan dalam file PDF - new.
+Ini adalah contoh teks yang akan disimpan dalam file PDF.
 `;
 createPdf(textToSave);

@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 
 
-const document = 'Panduan Set up Ledger Nano X.pdf';
+const document = 'document/document.pdf';
 const private = 'key/private_key.pem'
 
 // Baca kunci pribadi dari file
@@ -30,7 +30,7 @@ console.log(signature)
 
 
 
-fs.writeFileSync(`sign/sign_${document.toLowerCase().replaceAll(' ','_')}.dat`, signature);
+fs.writeFileSync(`sign/sign_${document.toLowerCase().split('/')[1].split('.')[0].replaceAll(' ','_')}.dat`, signature);
 
 // document.pdf 
 // AvMuF7fjea63RM1Y/PEG8z+eBYTMdkndhEW0oT3XmvMq/nvm3Ii6Msa7nyyLblTpk2OHF67zuG4CJjCx/qCWykV7xKU4VHzqAg1sripJRYseefDUbGPGa1dewDVbZjVwWo+8tXVOn+HaOmyYCaK/CUyQ0pjGTggxZm35E++/zhwexEKwL4xeZrzz6RZp9Kh1jBXLa6DyV3Q4xqLwU/Gumic5q4wFNfKmOK4KG+KBk6i6aTl9xv3KaxZl4szWYB1OEjxjuJj9cdT5tYXn9ACcsOUeHjCqkwFqk1LQfRNOE0rtxfS8Yxu+uMcs22+eEuB8jm/qT9gPjlExL2z6puIESQ==

@@ -3,8 +3,8 @@ const fs = require('fs');
 
 
 const publicKeyPath = 'key/public_key.pem'
-const documentPath = 'Panduan Set up Ledger Nano X.pdf'
-const signaturePath = 'sign/sign_panduan_set_up_ledger_nano_x.pdf.dat'
+const documentPath = 'document/document.pdf'
+const signaturePath = 'sign/sign_document.dat'
 
 
 // Baca kunci publik dari file
